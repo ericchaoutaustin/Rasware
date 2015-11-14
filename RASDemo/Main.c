@@ -60,7 +60,9 @@ int main(void) {
                 initIRSensor();
                 IRSensorDemo();     
                 break;
-            case '5':
+ 
+ 
+        case '5':
                 Printf("\nEncoders Demo\n");
                 initEncoders();
                 encoderDemo();
