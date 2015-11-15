@@ -16,14 +16,14 @@ void initGPIOLineSensor(void) {
 
     // use 8 I/O pins to initialize a GPIO line sensor
     gls = InitializeGPIOLineSensor(
-        PIN_F2, 
-        PIN_B3, 
-        PIN_C5, 
-        PIN_C7, 
-        PIN_D7, 
         PIN_B5, 
-        PIN_B1, 
-        PIN_E5
+        PIN_D0, 
+        PIN_D1, 
+        PIN_D2, 
+        PIN_D3, 
+        PIN_E0, 
+        PIN_C6, 
+        PIN_C7
         );
 }
 

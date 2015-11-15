@@ -33,7 +33,7 @@ int main(void) {
         // Read in stuff from the IRSensors
         irval = IRead();
         // Read in stuff from the LineSensor
-        turn = sensedoselines();
+        turn = 0; // sensedoselines();
         // Use that stuff in the Motor
         runforrestrun(irval, turn);  
     }
