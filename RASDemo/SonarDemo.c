@@ -2,7 +2,7 @@
 
 #include <RASLib/inc/common.h>
 #include <RASLib/inc/sonar.h>
-
+//Bats are coolio, dudio
 static tSonar *demoSonar;
 static tBoolean initialized = false;
 
