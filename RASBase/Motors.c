@@ -1,6 +1,6 @@
 #include "RASBase.h"
 
-
+#include <RASLib/inc/time.h>
 #include <RASLib/inc/servo.h>
 #include <RASLib/inc/common.h>
 #include <RASLib/inc/motor.h>
@@ -16,9 +16,9 @@ enum{
 
 void initMotors(void) {
       // Left
-      Motors[0] = InitializeServoMotor(PIN_B6, true);
+      Motors[0] = InitializeServoMotor(PIN_B6, false);
       // Right  
-      Motors[1] = InitializeServoMotor(PIN_B7, false); 
+      Motors[1] = InitializeServoMotor(PIN_B7, true); 
 } 
 
 // Culture died in the 70's
@@ -36,19 +36,25 @@ void runforrestrun(int ir, int line) {
     // Depending on the distance, the motors
     // will curve a hard-coded amount of time (2.5 seconds)
 
-    // Right
-    if ((ir == RIGHT)/* || (line == RIGHT)*/) {
-       SetMotor(Motors[0],0.4f);
-       SetMotor(Motors[1],0.1f);       
+
+    while(1) {
+
+    SetMotor(Motors[0],0.2f);
+    SetMotor(Motors[1],0.22f);     
+    
+    Wait(12.0);
+
+    SetMotor(Motors[0], 0);
+    SetMotor(Motors[1], 0);
+    
+    Wait(5.0);
+
+    SetMotor(Motors[0], -0.2f);
+    SetMotor(Motors[1], -0.215f);
+
+    Wait(10.0);
+
     }
-    // Straight
-    else if ((ir == STRAIGHT)/* || (line == STRAIGHT)*/) {
-       SetMotor(Motors[0],0.4f);
-       SetMotor(Motors[1],0.4f);
-    }
-    // Left
-    else if ((ir == LEFT) /*|| (line == LEFT)*/) {
-       SetMotor(Motors[0],0.1f);
-       SetMotor(Motors[1],0.4f);
-    }    
+      
+      
 }
